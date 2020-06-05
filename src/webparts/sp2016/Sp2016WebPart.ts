@@ -4,7 +4,7 @@ import { Version } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneTextField,
 } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'Sp2016WebPartStrings';
@@ -15,13 +15,14 @@ export interface ISp2016WebPartProps {
   description: string;
 }
 
-export default class Sp2016WebPart extends BaseClientSideWebPart<ISp2016WebPartProps> {
-
+export default class Sp2016WebPart extends BaseClientSideWebPart<
+  ISp2016WebPartProps
+> {
   public render(): void {
-    const element: React.ReactElement<ISp2016Props > = React.createElement(
+    const element: React.ReactElement<ISp2016Props> = React.createElement(
       Sp2016,
       {
-        description: this.properties.description
+        description: this.properties.description,
       }
     );
 
@@ -41,20 +42,20 @@ export default class Sp2016WebPart extends BaseClientSideWebPart<ISp2016WebPartP
       pages: [
         {
           header: {
-            description: strings.PropertyPaneDescription
+            description: strings.PropertyPaneDescription,
           },
           groups: [
             {
               groupName: strings.BasicGroupName,
               groupFields: [
                 PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
-                })
-              ]
-            }
-          ]
-        }
-      ]
+                  label: strings.DescriptionFieldLabel,
+                }),
+              ],
+            },
+          ],
+        },
+      ],
     };
   }
 }
