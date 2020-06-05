@@ -1,0 +1,75 @@
+.chatsListContainer {
+    height: calc(100% - 56px);
+    overflow-y: overlay;
+
+    .list {
+        padding: 0 !important;
+        position: relative;
+        list-style: none;
+
+        .listItem {
+            transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            padding-left: 16px;
+            padding-right: 16px;
+            width: 100%;
+            display: flex;
+            position: relative;
+            box-sizing: border-box;
+            text-align: left;
+            align-items: center;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            justify-content: flex-start;
+            color: inherit;
+            border: 0;
+            cursor: pointer;
+            margin: 0;
+            outline: 0;
+            user-select: none;
+            border-radius: 0;
+            vertical-align: middle;
+            text-decoration: none;
+            background-color: transparent;
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: transparent;
+            height: 76px;
+
+            .avatar {
+                height: 50px;
+                width: 50px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            .chatInfo {
+                width: calc(100% - 60px);
+                height: 46px;
+                padding: 15px 0;
+                margin-left: 10px;
+                border-bottom: 0.5px solid silver;
+                position: relative;
+
+                .chatName {
+                    margin-top: 5px;
+                }
+
+                .messageContent {
+                    color: gray;
+                    font-size: 15px;
+                    margin-top: 5px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+
+                .timestamp {
+                    position: absolute;
+                    color: gray;
+                    top: 20px;
+                    right: 0;
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
