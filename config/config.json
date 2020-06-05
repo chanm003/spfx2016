@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/sp2016/Sp2016WebPart.js",
+      "manifest": "./src/webparts/sp2016/Sp2016WebPart.manifest.json",
+      "outputPath": "./dist/sp-2016-web-part.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "Sp2016WebPartStrings": "webparts/sp2016/loc/{locale}.js"
+  }
+}
