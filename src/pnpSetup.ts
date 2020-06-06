@@ -5,6 +5,10 @@ import '@pnp/odata';
 import { proxyUrl, webRelativeUrl } from './settings';
 import { IWebPartContext } from '@microsoft/sp-webpart-base';
 
+interface IWebProps {
+    web: Web;
+}
+
 function configureWeb(isLocal: boolean, context: IWebPartContext): Web {
     let web: Web;
     if (isLocal) {
@@ -17,5 +21,6 @@ function configureWeb(isLocal: boolean, context: IWebPartContext): Web {
 }
 
 export {
-    configureWeb
+    configureWeb,
+    IWebProps
 }
