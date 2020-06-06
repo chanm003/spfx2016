@@ -3,7 +3,23 @@
   "solution": {
     "name": "sp-2016-client-side-solution",
     "id": "e499262e-ae0f-413a-b502-bf318ad112ce",
-    "version": "1.0.0.0"
+    "version": "1.0.0.0",
+    "features": [
+      {
+        "title": "sp-2016-client-side-solution",
+        "description": "sp-2016-client-side-solution",
+        "id": "0f71c8dd-7633-4b72-b746-bbbf6576b621",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ],
+          "elementFiles": [
+            "schema.xml"
+          ]
+        }
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/sp-2016.sppkg"

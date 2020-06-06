@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ListInstance 
+            CustomSchema="schema.xml"
+            FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+            Title="Chats" 
+            Description="Provisioned by SPFx app"
+            TemplateType="100"
+            Url="Lists/Chats">
+    </ListInstance>
+</Elements>
