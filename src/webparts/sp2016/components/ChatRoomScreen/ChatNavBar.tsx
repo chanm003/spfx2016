@@ -2,11 +2,13 @@ import * as React from 'react';
 import { Chat } from '../../../../models/Chat';
 import IconButton from 'material-ui/IconButton';
 import BackArrow from 'material-ui/svg-icons/hardware/keyboard-backspace';
+import Delete from 'material-ui/svg-icons/action/delete';
 import { History } from 'history';
 
 export interface IChatNavBarProps {
     chat: Chat;
     history: History;
+    deleteButtonClicked: () => void;
 }
 
 export default class ChatNavBar extends React.Component<IChatNavBarProps, {}> {
@@ -44,6 +46,18 @@ export default class ChatNavBar extends React.Component<IChatNavBarProps, {}> {
                         borderRadius: '50%'
                     }} />
                 <div style={{ lineHeight: '56px' }}>{this.props.chat.title}</div>
+                <div
+                    style={{
+                        flex: '1',
+                        display: 'flex',
+                        justifyContent: 'flex-end'
+                    }}>
+                    <IconButton
+                        onClick={() => this.props.deleteButtonClicked()}
+                        iconStyle={{ color: 'white' }}>
+                        <Delete />
+                    </IconButton>
+                </div>
             </div>
         );
     }

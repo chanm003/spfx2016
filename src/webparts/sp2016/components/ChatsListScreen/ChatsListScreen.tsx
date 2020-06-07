@@ -1,6 +1,7 @@
 import * as React from 'react';
 import ChatsList from './ChatsList';
 import ChatsNavBar from './ChatsNavBar';
+import AddChatButton from './AddChatButton';
 import { IWebProps } from '../../../../pnpSetup';
 import { IChat, Chat, toModels } from '../../../../models/Chat';
 import { History } from 'history';
@@ -27,9 +28,10 @@ export default class ChatsListScreen extends React.Component<IChatsListScreenPro
 
     public render(): React.ReactElement<IWebProps> {
         return (
-            <div style={{ height: '100vh' }}>
+            <div style={{ height: '100vh', position: 'relative' }}>
                 <ChatsNavBar />
                 <ChatsList chats={this.state.chats} history={this.props.history} />
+                <AddChatButton history={this.props.history} />
             </div>
         );
     }

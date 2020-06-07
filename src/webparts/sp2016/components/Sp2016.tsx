@@ -4,6 +4,7 @@ import ChatsListScreen from './ChatsListScreen/ChatsListScreen';
 import ChatRoomScreen from './ChatRoomScreen/ChatRoomScreen';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { IWebProps } from '../../../pnpSetup';
+import ChatCreationScreen from './ChatCreationScreen/ChatCreationScreen';
 
 export interface ISp2016Props extends IWebProps {
   description: string;
@@ -22,6 +23,7 @@ export default class Sp2016 extends React.Component<ISp2016Props, {}> {
               <ChatRoomScreen web={web} chatId={props.params.chatId} history={hashHistory} />
             )}
           />
+          <Route path='/new-chat' component={() => (<ChatCreationScreen web={web} history={hashHistory} />)} />
           <Route path='/' component={() => (<ChatsListScreen web={web} history={hashHistory} />)} />
         </Router>
       </MuiThemeProvider>

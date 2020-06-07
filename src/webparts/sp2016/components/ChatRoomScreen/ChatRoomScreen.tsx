@@ -44,7 +44,10 @@ export default class ChatRoomScreen extends React.Component<IChatRoomScreenProps
 
         return (
             <div className={styles.chatRoomScreenContainer}>
-                <ChatNavBar chat={chat} history={this.props.history} />
+                <ChatNavBar chat={chat} history={this.props.history} deleteButtonClicked={async () => {
+                    await Chat.delete(this.props.web, chat.id);
+                    this.props.history.replace('/chats');
+                }} />
                 {chat.messages && <MessagesList messages={chat.messages.toArray()} />}
                 <MessageInput onSendMessage={this.onSendMessage} />
             </div>
