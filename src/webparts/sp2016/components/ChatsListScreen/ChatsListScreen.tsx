@@ -3,12 +3,16 @@ import ChatsList from './ChatsList';
 import ChatsNavBar from './ChatsNavBar';
 import { IWebProps } from '../../../../pnpSetup';
 import { IChat, Chat, toModels } from '../../../../models/Chat';
+import { History } from 'history';
 
+export interface IChatsListScreenProps extends IWebProps {
+    history: History;
+}
 export interface IChatsListScreenState {
     chats: Chat[];
 }
 
-export default class ChatsListScreen extends React.Component<IWebProps, IChatsListScreenState> {
+export default class ChatsListScreen extends React.Component<IChatsListScreenProps, IChatsListScreenState> {
     constructor() {
         super();
 
@@ -25,7 +29,7 @@ export default class ChatsListScreen extends React.Component<IWebProps, IChatsLi
         return (
             <div style={{ height: '100vh' }}>
                 <ChatsNavBar />
-                <ChatsList chats={this.state.chats} />
+                <ChatsList chats={this.state.chats} history={this.props.history} />
             </div>
         );
     }

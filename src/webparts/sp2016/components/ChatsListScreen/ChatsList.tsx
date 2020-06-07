@@ -3,9 +3,11 @@ import * as moment from 'moment';
 import styles from './ChatsList.module.scss';
 import { Chat } from '../../../../models/Chat';
 import { Message } from '../../../../models/Message';
+import { History } from 'history';
 
 export interface IChatsListProps {
     chats: Chat[];
+    history: History;
 }
 
 export default class ChatsList extends React.Component<IChatsListProps, {}> {
@@ -23,7 +25,9 @@ export default class ChatsList extends React.Component<IChatsListProps, {}> {
 
     private renderChat(chat: Chat): JSX.Element {
         return (
-            <div key={chat.id} className={styles.listItem}>
+            <div key={chat.id} className={styles.listItem} onClick={() => {
+                this.props.history.push(`chats/${chat.id}`);
+            }}>
                 <img className={styles.avatar} src={chat.picture} alt='Profile' />
                 {this.renderChatInfo(chat)}
             </div>

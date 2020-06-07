@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { Router, Route, hashHistory, RouteComponentProps } from 'react-router';
 import ChatsListScreen from './ChatsListScreen/ChatsListScreen';
+import ChatRoomScreen from './ChatRoomScreen/ChatRoomScreen';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { IWebProps } from '../../../pnpSetup';
 
@@ -12,7 +14,16 @@ export default class Sp2016 extends React.Component<ISp2016Props, {}> {
     const { web } = this.props;
     return (
       <MuiThemeProvider>
-        <ChatsListScreen web={web} />
+        <Router history={hashHistory}>
+          <Route path='/chats' component={() => (<ChatsListScreen web={web} history={hashHistory} />)} />
+          <Route
+            path='/chats/:chatId'
+            component={(props: RouteComponentProps<{ chatId: string }, {}>) => (
+              <ChatRoomScreen web={web} chatId={props.params.chatId} history={hashHistory} />
+            )}
+          />
+          <Route path='/' component={() => (<ChatsListScreen web={web} history={hashHistory} />)} />
+        </Router>
       </MuiThemeProvider>
     );
   }

@@ -22,13 +22,17 @@ export class Messages {
         this.messages = _.map(JSON.parse(stringifiedJson), (item: IMessage) => new Message(item));
     }
 
+    public add(message: Message): void {
+        this.messages.push(message);
+    }
+
     public toArray(): Message[] {
         return this.messages;
     }
 
     public getLastMessage(): Message {
         if (this.messages.length > 0) {
-            return this.messages[0];
+            return this.messages[this.messages.length - 1];
         }
         return undefined;
     }
