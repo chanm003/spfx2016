@@ -2,6 +2,11 @@ import * as React from 'react';
 import styles from './UsersList.module.scss';
 import { IUser } from '../../../../models/User';
 
+const women10: string = require('../../assets/women10.jpg') as string;
+const women20: string = require('../../assets/women20.jpg') as string;
+const men4: string = require('../../assets/men4.jpg') as string;
+const men9: string = require('../../assets/men9.jpg') as string;
+
 export interface IUsersListProps {
     onUserPick: (user: IUser) => void;
 }
@@ -18,23 +23,23 @@ export default class UsersList extends React.Component<IUsersListProps, IUsersLi
             users: [
                 {
                     id: '1',
-                    name: 'Ethan Gonzalez',
-                    picture: 'https://randomuser.me/api/portraits/thumb/men/9.jpg'
+                    name: 'Avery Stewart',
+                    picture: women10
                 },
                 {
                     id: '2',
-                    name: 'Bryan Wallace',
-                    picture: 'https://randomuser.me/api/portraits/thumb/men/4.jpg'
+                    name: 'Katie Peterson',
+                    picture: women20
                 },
                 {
                     id: '3',
-                    name: 'Avery Stewart',
-                    picture: 'https://randomuser.me/api/portraits/thumb/women/1.jpg'
+                    name: 'Ethan Gonzalez',
+                    picture: men4
                 },
                 {
                     id: '4',
-                    name: 'Katie Peterson',
-                    picture: 'https://randomuser.me/api/portraits/thumb/women/3.jpg'
+                    name: 'Bryan Wallace',
+                    picture: men9
                 }
             ]
         };
