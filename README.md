@@ -6,32 +6,32 @@ SPFx sample app that targets SP2016 on-premise environment. Serves as guidance a
 
 Once provisioned, this app provisions a single SharePoint list.
 
-![Site Contents](/screenshots/walkthrough1.png "Site Contents")
+![Site Contents](/screenshots/walkthrough1.jpg "Site Contents")
 
 Query all list items.
 
-![get all](/screenshots/walkthrough2.png "get all")
+![get all](/screenshots/walkthrough2.jpg "get all")
 
 
 Clicking on "Avery Stewart" below creates a new list item.
 
-![contacts](/screenshots/walkthrough3.png "contacts")
+![contacts](/screenshots/walkthrough3.jpg "contacts")
 
 Query for a single list item.
 
-![chat](/screenshots/walkthrough4.png "chat")
+![chat](/screenshots/walkthrough4.jpg "chat")
 
 Update a single list item.
 
-![update1](/screenshots/walkthrough5.png "update1")
+![update1](/screenshots/walkthrough5.jpg "update1")
 
 Update a single list item again.
 
-![update2](/screenshots/walkthrough6.png "update2")
+![update2](/screenshots/walkthrough6.jpg "update2")
 
 Query all list tiems.
 
-![get all](/screenshots/walkthrough7.png "get all")
+![get all](/screenshots/walkthrough7.jpg "get all")
 
 ## Setting up Windows Machine for SPFx Development
 
@@ -109,21 +109,21 @@ Double click to begin install.   Installer will detect and automatically exit if
 
 Two service applications are required.
 
-![farm1](/screenshots/farm1.png "farm1")
+![farm1](/screenshots/farm1.jpg "farm1")
 
 Ensure service application is associated with web application.
 
-![farm2](/screenshots/farm2.png "farm2")
+![farm2](/screenshots/farm2.jpg "farm2")
 
 Configure prefix for Apps.
 
-![farm3](/screenshots/farm3.png "farm3")
+![farm3](/screenshots/farm3.jpg "farm3")
 
 
 Provision App Catalog.
 
-![farm4](/screenshots/farm4.png "farm4")
+![farm4](/screenshots/farm4.jpg "farm4")
 
 Remove restriction that blocks .JSON files.
 
-![farm5](/screenshots/farm5.png "farm5")
+![farm5](/screenshots/farm5.jpg "farm5")
