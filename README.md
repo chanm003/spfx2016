@@ -61,19 +61,19 @@ npm install --global gulp
 
 ### Get Source Code
 ```
-cd ~\Desktop
+cd ~/Desktop
 git clone https://github.com/chanm003/spfx2016.git
 ```
 
 
 ### Edit CDN Base Path to match URL of document library/folder that you created
 ```
-code ~\Desktop\spfx2016\config\write-manifests.json
+code ~/Desktop/spfx2016/config/write-manifests.json
 ```
 
 ### Build source code
 ```
-cd ~\Desktop\spfx2016
+cd ~/Desktop/spfx2016
 nvm use 10.20.1
 npm install
 npm run fixbuild
@@ -84,10 +84,10 @@ gulp package-solution --ship
 
 ### Upload Build Artifacts to SP2016
 
-| Source                                                    | Are                                           | 
+| Source                                                    | Destination                                   | 
 | ----------------------------------------------------------|:---------------------------------------------:| 
-| ~\Desktop\spfx2016\sharepoint\solution\sp-2016.sppkg      | App Catalog                                   |
-| ~\Desktop\spfx2016\temp\deploy\\*                         | Document library/folder that you created      | 
+| ~/Desktop/spfx2016/sharepoint/solution/sp-2016.sppkg      | App Catalog                                   |
+| ~/Desktop/spfx2016/temp/deploy/*                         | Document library/folder that you created       | 
 
 ### Add an App in Site Contents, Create Site Page, Insert Web Part
 TBD
