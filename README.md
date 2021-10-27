@@ -86,7 +86,7 @@ The following steps need to be performed when you first clone the repository ont
 
 ### Manually create a list called "Chats" in SPO (DEV environment)
 
-Update the relative URL accordingly
+Update the `webRelativeUrl` property accordingly inside of `settings.ts`
 ![schema](./screenshots/create-list-in-SPO.PNG)
 
 ### Run the App Locally during DEV
