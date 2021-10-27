@@ -9,7 +9,7 @@
   "scripts": {
     "build": "gulp bundle",
     "clean": "gulp clean",
-    "fixbuild": "rimraf ./node_modules/@microsoft/gulp-core-build-typescript/node_modules/typescript",
+    "bump:typescript": "rimraf ./node_modules/@microsoft/gulp-core-build-typescript/node_modules/typescript",
     "format": "prettier \"**/*.{ts,tsx,css,graphql}\" --write",
     "proxy": "node ./proxy",
     "serve": "concurrently --kill-others \"npm run proxy\" \"gulp serve\"",
