@@ -84,6 +84,11 @@ The following steps need to be performed when you first clone the repository ont
    ![Proxy Server](./screenshots/proxyserver-error-cropped.png)
 6. Hit `Ctrl+C` to quit
 
+### Manually create a list called "Chats" in SPO (DEV environment)
+
+Update the relative URL accordingly
+![schema](./screenshots/create-list-in-SPO.PNG)
+
 ### Run the App Locally during DEV
 
 ```
