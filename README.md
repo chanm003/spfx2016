@@ -65,7 +65,7 @@ The following steps need to be performed when you first clone the repository ont
 1. Cache credentials
    ```
    cd ~/Desktop/spfx2016
-   npm run proxy
+   rimraf .\config\private.json && npm run proxy
    ```
 2. When prompted provide your credentials
    ```
@@ -78,15 +78,16 @@ The following steps need to be performed when you first clone the repository ont
    - This file is in the `config` directory.
    - This file stores credentials in an encrypted manner.
    - This file is NEVER checked into source control.
-4. Verify proxy server is returning the same XML data as your real SPO environment.
+4. Verify proxy server is returning the same XML data as your real SPO environment.  Below screenshots show requests to `/_api/web` endpoint using BOTH the proxy running on localhost:8080 and the real SPO endpoint (`SharePoint URL` you entered on Step 2)
    ![Proxy Server](./screenshots/proxyserver-success.png)
-5. Repeat steps 1-4 as necessary if you receive the following authentication error.
+5. Repeat steps 1-4 as necessary if you receive the following authentication error.  Below screenshot shows error message when you enter invalid username/credentials.
    ![Proxy Server](./screenshots/proxyserver-error-cropped.png)
 6. Hit `Ctrl+C` to quit
 
 ### Manually create a list called "Chats" in SPO (DEV environment)
 
 Update the `webRelativeUrl` property accordingly inside of `settings.ts`
+
 ![schema](./screenshots/create-list-in-SPO.PNG)
 
 ### Run the App Locally during DEV
@@ -99,13 +100,13 @@ npm run serve
 
 ## Installing the App on SP2016
 
-### Pre-requisites, obtain some URLs from SP2016 PROD/STAGING Environment
+### Pre-requisites, obtain some URLs from your SP2016 STAGING/PROD Environment
 
-| URL                                                           |                              Example                               |
-| ------------------------------------------------------------- | :----------------------------------------------------------------: |
-| Document library/folder where you wish to keep bundled assets | http://socafrica.westeurope.cloudapp.azure.com/SPFxBundles/sp-2016 |
-| App Catalog                                                   |  http://socafrica.westeurope.cloudapp.azure.com/sites/appcatalog   |
-| Site where you wish to install App                            |           http://socafrica.westeurope.cloudapp.azure.com           |
+| URL                             |                              Example                               |                   Purpose                                       |
+| ------------------------------- | :----------------------------------------------------------------: | :-------------------------------------------------------------: |
+| Document library (or subfolder) | http://socafrica.westeurope.cloudapp.azure.com/SPFxBundles/sp-2016 | This is where you will upload your JSON, bundled .JS, images    |
+| App Catalog                     |  http://socafrica.westeurope.cloudapp.azure.com/sites/appcatalog   | This is where you will upload your .sppkg                       |
+
 
 ### Get Source Code
 
@@ -114,11 +115,13 @@ cd ~/Desktop
 git clone https://github.com/chanm003/spfx2016.git
 ```
 
-### Edit CDN Base Path to match URL of document library/folder that you created
+### Edit CDN Base Path to match URL of document library (or subfolder) that you created
 
 ```
 code ~/Desktop/spfx2016/config/write-manifests.json
 ```
+
+During local DEV, we normally run the `gulp serve`.  This will start up a server on your DEV box and serve your JSON/Javascript from `http://localhost:4321/temp/deploy`.  Prior to deployment, we need to change this.  Using URLs obtained from previous section, we would use `http://socafrica.westeurope.cloudapp.azure.com/SPFxBundles/sp-2016`
 
 ### Build source code
 
@@ -139,7 +142,7 @@ gulp package-solution --ship
 | ~/Desktop/spfx2016/sharepoint/solution/sp-2016.sppkg |               App Catalog                |
 | ~/Desktop/spfx2016/temp/deploy/\*                    | Document library/folder that you created |
 
-### Add an App in Site Contents, Create Site Page, Insert Web Part
+### Go to Site Contents to Add your App, then Create Site Page, Insert Web Part on the Site Page
 
 TBD
 
@@ -149,7 +152,7 @@ TBD
 
 ## Configuring SP2016 Farm to Support SPFX
 
-This section documents the steps for enabling SPFx development at the farm-level. Some or all of these requirements may have already been met by enabling the farm to support Add-Ins (i.e. App Catalog already exists).
+This section documents the steps for enabling SPFx development at the farm-level. Some or all of these requirements may have already been met by enabling the farm to support Add-Ins (i.e. App Catalog already exists).  Only Farm Administrators will have permissions to perform the steps in this section.
 
 ### Install Feature Pack 2
 
